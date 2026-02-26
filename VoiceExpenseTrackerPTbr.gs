@@ -72,7 +72,7 @@ function doPost(e) {
 }
 
 function processAudio(fileId, chatId, sheet) {
-  const fusoHorario = "GMT-3"; // Mantendo o fuso do Rio
+  const fusoHorario = "GMT-3"; // Fuso de Brasília
   const dataHoje = Utilities.formatDate(new Date(), fusoHorario, "yyyy-MM-dd");
 
   const fileUrl = getTelegramFileUrl(fileId);
@@ -123,7 +123,6 @@ Retorne APENAS o JSON puro, sem markdown, sem explicações.
     
     const nextRow = getNextRowInColumnA(sheet);
 
-    // Conforme seu último código, apontando para H14
     const celulaSaldoInicial = "$H$14"; 
     const formulaSaldo = `=${celulaSaldoInicial} - SUM($B$2:B${nextRow})`;
 
